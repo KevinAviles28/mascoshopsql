@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <h1>detalle</h1>
+    <ul>
+        <li><%=producto.id%> </li>
+        <li><%=producto.name%> </li>
+        <% categoria.forEach(categoria=> { %>
+          <% if (producto.cateSub.category_id == categoria.id) {%>
+          <li><%=categoria.name%> </li> 
+         <%}%> 
+        <% }) %>
+        <% subcategoria.forEach(subcategoria=> { %>
+            <% if (producto.cateSub.sub_category_id == subcategoria.id) {%>
+                <li><%=subcategoria.name%> </li> 
+               <%}%> 
+        <% }) %>
+    </ul>        
+
+    
+    <div>
+        <img id="img" src="/images/productos/<%=producto.imagenProducto[0].product_name %>" alt="producto">
+    </div>
+    <a href="/productos/productoEditar/<%= producto.id %>">editar</a>
+
+</body>
+</html>

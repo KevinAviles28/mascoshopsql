@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="" method="POST">
+        <div>
+            <label for="">nombre</label>
+            <input  type="text" name="nombre" value="<%=producto.name%>">
+        </div>
+        <div>
+            <label for="">precio</label>
+            <input value="<%=producto.price %>" type="text" name="precio">
+        </div>
+        <div>
+            <label for="">stock</label>
+            <input value="<%=producto.stock%>" type="text" name="stock">
+        </div>
+        <div>
+
+            <label for="">discount</label>
+            <input value="<%=producto.discount%>" type="text" name="descuento">
+        </div>
+        <div>
+
+            <label for="">descripcion</label>
+            <input value="<%=producto.description  %>" type="text" name="descripcion">
+        </div>
+        <div>
+            <label for="">categoria</label>
+            <select name="categoria">
+                <% categoria.forEach(cate => { %>
+                    <option value="<%= cate.id %> "selected><%= cate.name %> </option> 
+                <% }) %>
+                
+            </select>
+        </div>
+        <div>
+            <label for="">sub-categoria</label>
+            <select name="subcategoria">
+                <% subcategoria.forEach(suba => { %>
+                    <option value="<%= suba.id %> "selected><%= suba.name %> </option> 
+                <% }) %>
+                
+            </select>
+        </div>
+        <button type="submit">!listo</button>
+    </form>
+</body>
+
+</html>

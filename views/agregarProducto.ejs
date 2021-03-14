@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="" method="POST" enctype="multipart/form-data">
+        <div>
+            <label for="">nombre</label>
+            <input type="text" name="nombre">
+        </div>
+        <div>
+            <label for="">precio</label>
+            <input type="text" name="precio">
+        </div>
+        <div>
+            <label for="">stock</label>
+            <input type="text" name="stock">
+        </div>
+        <div>
+
+            <label for="">discount</label>
+            <input type="text" name="descuento">
+        </div>
+        <div>
+
+            <label for="">descripcion</label>
+            <input type="text" name="descripcion">
+        </div>
+        <div>
+            <label for="">categoria</label>
+            <select name="categoria">
+                <% categoria.forEach(cate => { %>
+                    <option value="<%= cate.id %>"><%= cate.name %> </option> 
+                <% }) %>
+                
+            </select>
+        </div>
+        <div>
+            <label for="">sub-categoria</label>
+            <select name="subcategoria">
+                <% subcategoria.forEach(suba => { %>
+                    <option value="<%= suba.id %> "><%= suba.name %> </option> 
+                <% }) %>
+                
+            </select>
+        </div>
+        <div>
+            <label for="">imagen</label>
+            <input type="file" class="form-control" id="seleccionArchivos" name="img">
+        </div>
+        <button type="submit">!listo</button>
+    </form>
+</body>
+
+</html>
